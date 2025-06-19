@@ -1,0 +1,22 @@
+﻿<Window
+    x:Class="RememberColors.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RememberColors.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Guess the Colors number if you can"
+    Width="1300"
+    Height="600"
+    Background="{StaticResource BackgroundColor}"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized"
+    mc:Ignorable="d">
+    <Border
+        Margin="10"
+        BorderBrush="White"
+        BorderThickness="3"
+        CornerRadius="15">
+        <ContentControl Content="{Binding MainView}" />
+    </Border>
+</Window>
