@@ -13,6 +13,34 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        
+        <Grid Visibility="{Binding StartButtonVisibility}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Button Style="{StaticResource MainButtonStyle}" >
+                <StackPanel>
+                    <TextBlock Text="Easy" Style="{StaticResource TitleTextBlockStyle}"/>
+                    <TextBlock Text="we need minimum 3 colors select to start game at easy level!" Style="{StaticResource DescriptionTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+            <Button
+                Grid.Row="1"
+                Style="{StaticResource MainButtonStyle}" >
+                <StackPanel>
+                    <TextBlock Text="Medium" Style="{StaticResource TitleTextBlockStyle}"/>
+                    <TextBlock Text="we need minimum 4 colors select to start game at medium level!" Style="{StaticResource DescriptionTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="2" Style="{StaticResource MainButtonStyle}">
+                <StackPanel>
+                    <TextBlock Text="Hard" Style="{StaticResource TitleTextBlockStyle}"/>
+                    <TextBlock Text="we need minimum 5 colors select to start game at hard level!" Style="{StaticResource DescriptionTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+
+        </Grid>
     </Grid>
 </UserControl>
