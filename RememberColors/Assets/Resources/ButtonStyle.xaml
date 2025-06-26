@@ -90,23 +90,69 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <!--<Setter Property="Template">
+    </Style>
+
+    <Style x:Key="SettingsButtonStyle" TargetType="Button">
+        <Setter Property="Background" >
             <Setter.Value>
-                <ControlTemplate>
+                <LinearGradientBrush StartPoint="0.5 1" EndPoint="0 0">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Offset="0" Color="#FF00FF5B" />
+                        <GradientStop Offset="1" Color="#FF0014FF" />
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Margin" Value="15" />
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border
-                        Width="{TemplateBinding Width}"
-                        Height="{TemplateBinding Height}"
-                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="White"
-                        BorderThickness="1"
-                        CornerRadius="10"
-                        SnapsToDevicePixels="True">
-                        <ContentPresenter />
+                    x:Name="border"
+                    Width="{TemplateBinding Width}"
+                    Height="{TemplateBinding Height}"
+                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="White"
+                    BorderThickness="1"
+                    CornerRadius="10000"
+                    SnapsToDevicePixels="True">
+                        <Border.BitmapEffect>
+                            <DropShadowBitmapEffect
+                            Direction="-40"
+                            Softness="5"
+                            Color="#FF9CA0A8" />
+                        </Border.BitmapEffect>
+                        <Image Source="/Assets/Images/Settings_Bold.png" 
+                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                               Margin="5"/>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Button.MouseOver.Background}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Pressed.Background}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Disabled.Background}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Disabled.Border}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
-        </Setter>-->
+        </Setter>
     </Style>
+    
 </ResourceDictionary>

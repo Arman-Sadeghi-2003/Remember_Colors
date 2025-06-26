@@ -9,11 +9,12 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid Background="#6FFFFFFF">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="auto" />
-        </Grid.RowDefinitions>
-        <Grid Visibility="{Binding StartButtonVisibility}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
@@ -42,5 +43,20 @@
             </Button>
 
         </Grid>
+
+        <Border BorderThickness="4 3 2 1" BorderBrush="White" Grid.Column="1" Margin="5">
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Title"/>
+
+                <Button Style="{StaticResource SettingsButtonStyle}"
+                        Grid.Row="1"/>
+            </Grid>
+        </Border>
+
     </Grid>
 </UserControl>

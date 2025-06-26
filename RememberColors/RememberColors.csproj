@@ -8,4 +8,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\Images\Settings_Bold.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Tools\Navigators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\Settings_Bold.png" />
+  </ItemGroup>
+
 </Project>

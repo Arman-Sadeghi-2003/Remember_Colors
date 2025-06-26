@@ -19,4 +19,18 @@
         <Setter Property="TextAlignment" Value="Center" />
     </Style>
 
+
+    <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="Foreground" Value="#FF381C10" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+    </Style>
+
+
 </ResourceDictionary>
