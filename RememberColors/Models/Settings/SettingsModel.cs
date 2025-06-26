@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace RememberColors.Models.Settings
+﻿namespace RememberColors.Models.Settings
 {
 	public class SettingsModel
 	{
@@ -8,8 +6,50 @@ namespace RememberColors.Models.Settings
 
 		private int showColorsNumber = 3;
 		private bool isRandom = true;
-		private List<Color> selectedColors = new();
+		private List<string> selectedColors = new();
 
-		#endregion
+		#endregion Fields
+
+		#region Properties
+
+		public int ShowColorsNumber
+		{
+			get => showColorsNumber;
+			set
+			{
+				showColorsNumber = value;
+				selectedColors = new();
+			}
+		}
+
+		public bool IsRandom
+		{
+			get => isRandom;
+			set
+			{
+				isRandom = value;
+				selectedColors = new();
+			}
+		}
+
+		public List<string> SelectedColors
+		{
+			get => selectedColors;
+			set => selectedColors = value;
+		}
+
+		public Dictionary<string, string> SelectableColors = new()
+		{
+			{"Red", "#FFFF0000"},
+			{"Green", "#FF00FF00"},
+			{"Blue", "#FF0000FF"},
+			{"Pink", "#FFFF0080"},
+			{"Purple", "#FF8000FF"},
+			{"Yellow", "#FFFFD000"},
+			{"Brown", "#FF864111"},
+			{"Gray", "#FF808080"},
+		};
+
+		#endregion Properties
 	}
 }
