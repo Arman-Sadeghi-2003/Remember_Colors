@@ -10,10 +10,10 @@
     mc:Ignorable="d">
     <Grid Background="#6FFFFFFF">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
         </Grid.ColumnDefinitions>
-        
+
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -28,14 +28,20 @@
                 </StackPanel>
             </Button>
 
-            <Button Grid.Row="1" Style="{StaticResource MainButtonStyle}" IsEnabled="{Binding MediumButtonEnabled}">
+            <Button
+                Grid.Row="1"
+                IsEnabled="{Binding MediumButtonEnabled}"
+                Style="{StaticResource MainButtonStyle}">
                 <StackPanel>
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Medium" />
                     <TextBlock Style="{StaticResource DescriptionTextBlockStyle}" Text="we need minimum 4 colors select to start game at medium level!" />
                 </StackPanel>
             </Button>
 
-            <Button Grid.Row="2" Style="{StaticResource MainButtonStyle}" IsEnabled="{Binding HardButtonEnabled}">
+            <Button
+                Grid.Row="2"
+                IsEnabled="{Binding HardButtonEnabled}"
+                Style="{StaticResource MainButtonStyle}">
                 <StackPanel>
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Hard" />
                     <TextBlock Style="{StaticResource DescriptionTextBlockStyle}" Text="we need minimum 5 colors select to start game at hard level!" />
@@ -44,17 +50,20 @@
 
         </Grid>
 
-        <Border BorderThickness="4 3 2 1" BorderBrush="White" Grid.Column="1" Margin="5">
+        <Border
+            Grid.Column="1"
+            Margin="5"
+            BorderBrush="White"
+            BorderThickness="4,3,2,1">
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Title"/>
+                <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Title" />
 
-                <Button Style="{StaticResource SettingsButtonStyle}"
-                        Grid.Row="1"/>
+                <Button Grid.Row="1" Style="{StaticResource SettingsButtonStyle}" />
             </Grid>
         </Border>
 
