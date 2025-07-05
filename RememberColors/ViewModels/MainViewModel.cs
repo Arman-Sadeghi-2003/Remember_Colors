@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using RememberColors.Tools.Command;
+using RememberColors.Tools.Navigators;
+using System.Windows;
+using System.Windows.Input;
 
 namespace RememberColors.ViewModels
 {
@@ -47,5 +50,26 @@ namespace RememberColors.ViewModels
 
 		#endregion
 
+		// ----> Constructor
+
+		public MainViewModel()
+		{
+			SettingsCommand = new CommandHandler(SettingsAction);
+		}
+
+		#region Commands
+
+		public ICommand? SettingsCommand { get; set; }
+
+		#endregion
+
+		#region Methods
+
+		void SettingsAction(object? obj)
+		{
+			MainViewNavigator.Instance.NavigateTo(Tools.Enums.MainViews.Settings);
+		}
+
+		#endregion
 	}
 }
