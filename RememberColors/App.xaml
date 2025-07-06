@@ -10,6 +10,10 @@
                 <ResourceDictionary Source="/Assets/Resources/Colors.xaml" />
                 <ResourceDictionary Source="/Assets/Resources/ButtonStyle.xaml" />
                 <ResourceDictionary Source="/Assets/Resources/TextBlockStyles.xaml" />
+                <ResourceDictionary Source="/Assets/Resources/BorderStyle.xaml" />
+                <ResourceDictionary Source="/Assets/Resources/CheckBoxStyle.xaml" />
+                <ResourceDictionary Source="/Assets/Resources/ComboBoxStyle.xaml" />
+                <ResourceDictionary Source="/Assets/Resources/TextBoxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

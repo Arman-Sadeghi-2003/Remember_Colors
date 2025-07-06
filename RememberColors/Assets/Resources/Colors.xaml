@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!--  Linear gradient colors  -->
     <LinearGradientBrush x:Key="BackgroundColor" StartPoint="0.5 0" EndPoint="0 1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0" Color="#FF00FF5B" />
@@ -13,5 +14,16 @@
             <GradientStop Offset="1" Color="#FFFC007A" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
+
+    <!--  Solid colors  -->
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="#64748B" />
+    <SolidColorBrush x:Key="AccentBrush" Color="#0EA5E9" />
+    <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="BorderBrush" Color="#E2E8F0" />
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="#1E293B" />
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#64748B" />
+    <SolidColorBrush x:Key="HoverBrush" Color="#F1F5F9" />
 
 </ResourceDictionary>

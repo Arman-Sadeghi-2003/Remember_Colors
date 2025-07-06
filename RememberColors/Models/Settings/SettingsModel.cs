@@ -17,6 +17,7 @@
 			get => showColorsNumber;
 			set
 			{
+				var s = SelectableColors.Values;
 				showColorsNumber = value;
 				selectedColors = new();
 			}
