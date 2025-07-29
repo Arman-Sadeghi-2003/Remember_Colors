@@ -9,108 +9,115 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto" 
-                  HorizontalScrollBarVisibility="Disabled"
-                  Padding="32">
+    <ScrollViewer
+        Padding="32"
+        HorizontalScrollBarVisibility="Disabled"
+        VerticalScrollBarVisibility="Auto">
         <StackPanel MaxWidth="600">
-            <!-- Header -->
-            <TextBlock Text="Settings" 
-                       Style="{StaticResource HeaderTextStyle}"/>
+            <!--  Header  -->
+            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Settings" />
 
-            <!-- General Settings Card -->
+            <!--  General Settings Card  -->
             <Border Style="{StaticResource CardStyle}">
                 <StackPanel>
-                    <TextBlock Text="General Settings" 
-                               Style="{StaticResource SectionHeaderStyle}"/>
+                    <TextBlock Style="{StaticResource SectionHeaderStyle}" Text="General Settings" />
 
-                    <!-- Number of Colors -->
+                    <!--  Number of Colors  -->
                     <Grid Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0"
-                                   Text="Number of Colors"
-                                   Style="{StaticResource LabelTextStyle}"/>
-                        <TextBox Grid.Column="1"
-                                 Style="{StaticResource ModernTextBoxStyle}"
-                                 Text="{Binding Model.ShowColorsNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource LabelTextStyle}"
+                            Text="Number of Colors" />
+                        <TextBox
+                            Grid.Column="1"
+                            Style="{StaticResource ModernTextBoxStyle}"
+                            Text="{Binding Model.ShowColorsNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </Grid>
 
-                    <!-- Show Speed -->
+                    <!--  Show Speed  -->
                     <Grid Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0"
-                                   Text="Animation Speed"
-                                   Style="{StaticResource LabelTextStyle}"/>
-                        <ComboBox Grid.Column="1"
-                                  Style="{StaticResource ModernComboBoxStyle}"
-                                  SelectedValue="{Binding ShowSpeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                            <ComboBoxItem Content="1x" Tag="1"/>
-                            <ComboBoxItem Content="2x" Tag="2"/>
-                            <ComboBoxItem Content="3x" Tag="3"/>
-                            <ComboBoxItem Content="4x" Tag="4"/>
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource LabelTextStyle}"
+                            Text="Animation Speed" />
+                        <ComboBox
+                            Grid.Column="1"
+                            SelectedValue="{Binding ShowSpeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Style="{StaticResource ModernComboBoxStyle}">
+                            <ComboBoxItem Content="1x" Tag="1" />
+                            <ComboBoxItem Content="2x" Tag="2" />
+                            <ComboBoxItem Content="3x" Tag="3" />
+                            <ComboBoxItem Content="4x" Tag="4" />
                         </ComboBox>
                     </Grid>
 
-                    <!-- Random Colors -->
-                    <CheckBox Content="Enable Random Colors"
-                              Style="{StaticResource ModernCheckBoxStyle}"
-                              IsChecked="{Binding Model.IsRandom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <!--  Random Colors  -->
+                    <CheckBox
+                        Content="Enable Random Colors"
+                        IsChecked="{Binding Model.IsRandom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource ModernCheckBoxStyle}" />
                 </StackPanel>
             </Border>
 
-            <!-- Color Selection Card -->
+            <!--  Color Selection Card  -->
             <Border Style="{StaticResource CardStyle}">
                 <StackPanel>
-                    <TextBlock Text="Color Palette" 
-                               Style="{StaticResource SectionHeaderStyle}"/>
+                    <TextBlock Style="{StaticResource SectionHeaderStyle}" Text="Color Palette" />
 
-                    <TextBlock Text="Choose your preferred colors for the display"
-                               Style="{StaticResource LabelTextStyle}"
-                               Margin="0,0,0,16"/>
+                    <TextBlock
+                        Margin="0,0,0,16"
+                        Style="{StaticResource LabelTextStyle}"
+                        Text="Choose your preferred colors for the display" />
 
                     <ItemsControl ItemsSource="{Binding Model.SelectableColors.Values}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel/>
+                                <WrapPanel />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Style="{StaticResource ColorButtonStyle}"
-                                        Background="{Binding DataContext.Model.SelectedColors, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource ColorSelectionToBrushConverter}, ConverterParameter={Binding}}"
-                                        Command="{Binding DataContext.SelectColorCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"
-                                        IsEnabled="{Binding DataContext.Model.IsRandom, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource InverseBooleanConverter}}"
-                                        ToolTip="{Binding}"/>
+                                <Button
+                                    Background="{Binding DataContext.Model.SelectedColors, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource ColorSelectionToBrushConverter}, ConverterParameter={Binding}}"
+                                    Command="{Binding DataContext.SelectColorCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    IsEnabled="{Binding DataContext.Model.IsRandom, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource InverseBooleanConverter}}"
+                                    Style="{StaticResource ColorButtonStyle}"
+                                    ToolTip="{Binding}" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </StackPanel>
             </Border>
 
-            <!-- Action Buttons -->
+            <!--  Action Buttons  -->
             <Border Style="{StaticResource CardStyle}">
                 <StackPanel>
-                    <TextBlock Text="Actions" 
-                               Style="{StaticResource SectionHeaderStyle}"/>
+                    <TextBlock Style="{StaticResource SectionHeaderStyle}" Text="Actions" />
 
                     <WrapPanel Orientation="Horizontal">
-                        <Button Content="🏠 Home"
-                                Style="{StaticResource PrimaryButtonStyle}"
-                                Command="{Binding HomeCommand}"
-                                Margin="0,0,12,0"/>
-                        <Button Content="💾 Save Settings"
-                                Style="{StaticResource SecondaryButtonStyle}"
-                                Command="{Binding SaveCommand}"
-                                Margin="0,0,12,0"/>
-                        <Button Content="📂 Load Settings"
-                                Style="{StaticResource SecondaryButtonStyle}"
-                                Command="{Binding LoadCommand}"/>
+                        <Button
+                            Margin="0,0,12,0"
+                            Command="{Binding HomeCommand}"
+                            Content="🏠 Home"
+                            Style="{StaticResource PrimaryButtonStyle}" />
+                        <Button
+                            Margin="0,0,12,0"
+                            Command="{Binding SaveCommand}"
+                            Content="💾 Save Settings"
+                            Style="{StaticResource SecondaryButtonStyle}" />
+                        <Button
+                            Command="{Binding LoadCommand}"
+                            Content="📂 Load Settings"
+                            Style="{StaticResource SecondaryButtonStyle}" />
                     </WrapPanel>
                 </StackPanel>
             </Border>
